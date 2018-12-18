@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drum Beats</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</head>
+<body>
+
+	<h1>Drum Beats</h1>
+
+<div class="pad">
+  <div class="button pad-1" data-key="82"><center>R <br> Clap</center></div>
+  <div class="button pad-2" data-key="84"><center>T <br> HitHat</center></div>
+  <div class="button pad-3" data-key="89"><center>Y <br> Kick</center></div>
+  <div class="button pad-4" data-key="85"><center>U <br> O-Hat</center></div>
+  <div class="button pad-5" data-key="70"><center>F <br> Boom</center></div>
+  <div class="button pad-6" data-key="71"><center>G <br> Ride</center></div>
+  <div class="button pad-7" data-key="72"><center>H <br> Snare</center></div>
+  <div class="button pad-8" data-key="74"><center>J <br> Tom</center></div>
+  <div class="button pad-9" data-key="86"><center>V <br> Tink</center></div>
+  <div class="button pad-10" data-key="66"><center>B <br> Kick-B</center></div>
+  <div class="button pad-11" data-key="78"><center>N <br> Tom-B</center></div>
+  <div class="button pad-12" data-key="77"><center>M <br> C-Hat</center></div>
+</div>
+
+
+<script>
+	$(document).ready(function() {
+
+  var padOne = new Audio('sounds/clap.wav');
+  $('.pad-1').mousedown(function() {
+    padOne.load();
+    padOne.play();
+  });
+
+  var padTwo = new Audio('sounds/hihat.wav');
+  $('.pad-2').mousedown(function() {
+    padTwo.load();
+    padTwo.play();
+  });
+
+  var padThree = new Audio('sounds/kick.wav');
+  $('.pad-3').mousedown(function() {
+    padThree.load();
+    padThree.play();
+  });
+
+  var padFour = new Audio('sounds/openhat.wav');
+  $('.pad-4').mousedown(function() {
+    padFour.load();
+    padFour.play();
+  });
+
+  var padFive = new Audio('sounds/boom.wav');
+  $('.pad-5').mousedown(function() {
+    padFive.load();
+    padFive.play();
+  });
+
+  var padSix = new Audio('sounds/ride.wav');
+  $('.pad-6').mousedown(function() {
+    padSix.load();
+    padSix.play();
+  });
+
+  var padSeven = new Audio('sounds/snare.wav');
+  $('.pad-7').mousedown(function() {
+    padSeven.load();
+    padSeven.play();
+  });
+  
+  var padEight = new Audio('sounds/tom.wav');
+  $('.pad-8').mousedown(function() {
+    padEight.load();
+    padEight.play();
+  });
+
+  var padNine = new Audio('sounds/tink.wav');
+  $('.pad-9').mousedown(function() {
+    padNine.load();
+    padNine.play();
+  });
+  
+  var padTen = new Audio('https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/kick.wav');
+  $('.pad-10').mousedown(function() {
+    padTen.load();
+    padTen.play();
+  });
+  
+  var padEleven = new Audio('https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/tom-high.wav');
+  $('.pad-11').mousedown(function() {
+    padEleven.load();
+    padEleven.play();
+  });
+  
+  var padTwelve = new Audio('https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/hihat-close.wav');
+  $('.pad-12').mousedown(function() {
+    padTwelve.load();
+    padTwelve.play();
+  });
+  
+  
+  $(window).keydown(function(e) {
+    var code = e.keyCode;
+    var key = String.fromCharCode(e.keyCode);
+    $("div[data-key='"+code+"']").addClass("press");
+    console.log(e);
+    
+    switch(key) {
+      case "R":
+        padOne.load();
+        padOne.play();
+        break;
+      case "T":
+        padTwo.load();
+        padTwo.play();
+        break;
+      case "Y":
+        padThree.load();
+        padThree.play();
+        break;
+      case "U":
+        padFour.load();
+        padFour.play();
+        break;
+      case "F":
+        padFive.load();
+        padFive.play();
+        break;
+      case "G":
+        padSix.load();
+        padSix.play();
+        break;
+      case "H":
+        padSeven.load();
+        padSeven.play();
+        break;
+      case "J":
+        padEight.load();
+        padEight.play();
+        break;
+      case "V":
+        padNine.load();
+        padNine.play();
+        break;
+      case "B":
+        padTen.load();
+        padTen.play();
+        break;
+      case "N":
+        padEleven.load();
+        padEleven.play();
+        break;
+      case "M":
+        padTwelve.load();
+        padTwelve.play();
+        break;
+      default:
+    }
+  });
+
+  $(window).keyup(function(e) { 
+    var code = e.keyCode;
+    $("div[data-key='"+code+"']").removeClass("press");
+  });
+
+});
+
+</script>
+</body>
+</html>
